@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Calculadora de Materiales</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+
+  <!-- LOGIN -->
+  <section id="screen-login" class="screen active">
+    <header>
+      <h1>Bienvenido</h1>
+      <p>Sistema de cálculo de materiales de construcción</p>
+    </header>
+    <main>
+      <div class="logo-circle"></div>
+      <div class="center">
+        <h2>Calculadora de Materiales</h2>
+        <p class="sub">Ingresa tus datos para acceder</p>
+      </div>
+      <label for="login-user">Usuario</label>
+      <input id="login-user" placeholder="Ingresa tu usuario">
+      <label for="login-pass">Contraseña</label>
+      <input id="login-pass" type="password" placeholder="********">
+      <div class="error" id="login-error"></div>
+      <button class="btn" onclick="login()">Iniciar sesión</button>
+      <button class="link" onclick="showScreen('register')">¿No tenés cuenta? Registrate</button>
+    </main>
+  </section>
+
+  <!-- REGISTRO -->
+  <section id="screen-register" class="screen">
+    <header>
+      <h1>Crear cuenta</h1>
+      <p>Registrate para empezar a calcular</p>
+    </header>
+    <main>
+      <h2 class="center">Registro de usuario</h2>
+      <p class="sub center">Vas a poder iniciar sesión con estos datos</p>
+      <label for="reg-name">Nombre completo</label>
+      <input id="reg-name" placeholder="Ej: Juan Pérez">
+      <label for="reg-user">Usuario</label>
+      <input id="reg-user" placeholder="Elegí un usuario">
+      <label for="reg-pass">Contraseña</label>
+      <input id="reg-pass" type="password" placeholder="Mínimo 6 caracteres">
+      <label for="reg-pass2">Confirmar contraseña</label>
+      <input id="reg-pass2" type="password" placeholder="Repetí la contraseña">
+      <div class="error" id="register-error"></div>
+      <button class="btn" onclick="register()">Registrarme</button>
+      <button class="link" onclick="showScreen('login')">¿Ya tenés cuenta? Iniciar sesión</button>
+    </main>
+  </section>
+
+  <!-- MENU -->
+  <section id="screen-menu" class="screen">
+    <header>
+      <h1 id="menu-greeting">Hola</h1>
+      <p>Elegí qué querés calcular</p>
+    </header>
+    <main id="menu-list"></main>
+  </section>
+
+  <!-- CALCULADORA -->
+  <section id="screen-calc" class="screen">
+    <header>
+      <div class="row">
+        <span class="back" onclick="showScreen('menu')">←</span>
+        <h1 id="calc-title" style="font-size:20px;">Calcular</h1>
+      </div>
+      <p id="calc-subtitle">Opción del menú principal</p>
+    </header>
+    <main id="calc-body"></main>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
